@@ -19,6 +19,11 @@ namespace TestTransparentPix
             // This is needed to make the ball image corners transparent with respect to the background image.
             pictureBox1.Controls.Add(pictureBox2);
 
+
+            // This is overrides any BackColor property set (or not set) in the Design 
+            pictureBox2.BackColor = Color.Transparent;
+
+
             // The following code puts the ball at the center of the background.
             Point center = new Point(pictureBox1.Size);
             center.X /= 2;
@@ -27,9 +32,8 @@ namespace TestTransparentPix
             Point ballCenter = new Point(pictureBox2.Size);
             ballCenter.X /= 2;
             ballCenter.Y /= 2;
-            pictureBox2.Location = new Point(center.X - ballCenter.X, center.Y - ballCenter.Y);
 
-            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Location = new Point(center.X - ballCenter.X, center.Y - ballCenter.Y);
         }
     }
 }
